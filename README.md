@@ -16,7 +16,7 @@ Stranger Dungeon is a [Vue.js](https://vuejs.org/)-powered site that provides yo
 - The only API to be used is [http://www.dnd5eapi.co/](http://www.dnd5eapi.co/)
 - The site needs to be mobile-responsive
 - Provide a glance information of the class, full information will be redirected to a more comprehensive website
-- API only provides with text bases information
+- API only provides with text basis information
 
 ## Used in this site
 - [Vue.js](https://vuejs.org/) - as the primary web framework
