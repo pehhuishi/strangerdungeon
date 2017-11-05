@@ -1,6 +1,7 @@
 // Init Vue!
 const API_URL = 'http://www.dnd5eapi.co/api/classes/'
 const ASSETS_URL = './imgs/classes'
+const BEYOND_URL = 'https://www.dndbeyond.com/characters/classes/'
 
 var app = new Vue({
   el: '#app',
@@ -9,7 +10,8 @@ var app = new Vue({
     character: {
       name: 'Loading...'
     },
-    equipments: []
+    equipments: [],
+    readMoreUrl: ''
   },
   mounted: function () {
     this.retriveClass()
@@ -32,6 +34,8 @@ var app = new Vue({
           this.character = data
           this.character.image = `${ASSETS_URL}/${data.name}.png`
           this.character.proficiences = data.proficiencies
+
+          this.readMoreUrl = `${BEYOND_URL}${_.lowerCase(data.name)}`
 
           // change body class per character name
           document.querySelector('body').classList.add(data.name)

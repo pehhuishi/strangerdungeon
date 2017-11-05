@@ -81,6 +81,11 @@ body.Rogue {
   url(https://media-waterdeep.cursecdn.com/attachments/0/84/background_texture.png);
 }
 
+a, a:visited {
+  color: #b33129;
+  text-decoration: none;
+}
+
 header {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -122,6 +127,16 @@ h3 {
 
 .attribute {
   margin: 10px 0;
+}
+
+.button.button-primary {
+  background-color: #6f1f1a;
+  border-color: white;
+}
+
+.button.button-primary:hover, .button.button-primary:focus {
+  background-color: #b33129;
+  border-color: white;
 }
 
 footer {

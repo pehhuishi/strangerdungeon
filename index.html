@@ -27,7 +27,9 @@
 
     <div class="row wrapper">
       <div class="character-hero one-half column">
-        <h2>{{ character.name }}</h2>
+        <a :href="readMoreUrl" target="_blank">
+          <h2>{{ character.name }}</h2>
+        </a>
         <img :src="character.image" :alt="character.name" width="100%">
       </div>
       <div class="character-status one-half column">
@@ -41,7 +43,6 @@
         </div>
         <div class="proficiencies attribute">
           <h3>Proficiencies</h3>
-
           <ul>
             <li v-for="proficiency in character.proficiences">
               {{ proficiency.name }}
@@ -65,6 +66,7 @@
             </li>
           </ul>
         </div>
+        <a class="button button-primary" :href="readMoreUrl" target="_blank">Read more</a>
       </div>
     </div>
 
