@@ -16,26 +16,6 @@
   <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
-
-  <!-- <script type="text/x-template" id="page-head">
-    <header>
-      <h1>Vue.JS Grid Template</h1>
-    </header>
-  </script>
-
-  <script type="text/x-template" id="grid">
-  	<div class="grid">
-    	<transition-group name="pop">
-			  <div class="color" v-for="(color, index) in colors" v-bind:key="{index}" v-bind:style="{ backgroundColor: color.hex }"></div>
-      </transition-group>
-    </div>
-  </script>
-
-  <div id="demo">
-    <page-head></page-head>
-    <grid :colors="colors"></grid>
-  </div> -->
-
   <div id="app" class="container">
     <header>
       <h1>{{ title }}</h1>
@@ -44,19 +24,20 @@
     <div class="row wrapper">
       <div class="character-hero one-half column">
         <h2>{{ character.name }}</h2>
-        <img :src="character.image" :alt="character.name" height="500">
+        <img :src="character.image" :alt="character.name" width="100%">
       </div>
       <div class="character-status one-half column">
         <div class="hp attribute">
           <h3>Hit Points</h3>
           <ul>
             <li>Hit Dice: 1d{{ character.hit_die }} per {{ character.name }} level</li>
-            <li>Hit Points at 1st Level: {{ character.hit_die }} + your Constitution modifier
-            <li>Hit Points at Higher Levels: 1d{{ character.hit_die}} (or 7) + your Constitution modifier per {{ character.name }} level after 1st</li>
+            <li>HP at 1st Level: {{ character.hit_die }} + your Constitution modifier
+            <li>HP at Higher Levels: 1d{{ character.hit_die}} + your Constitution modifier per {{ character.name }} level after 1st</li>
           </ul>
         </div>
         <div class="proficiencies attribute">
           <h3>Proficiencies</h3>
+
           <ul>
             <li v-for="proficiency in character.proficiences">
               {{ proficiency.name }}
@@ -72,22 +53,31 @@
           </ul>
         </div>
         <div class="equipments attribute">
-          <h3>Equipments</h3>
+          <h3>Starting Equipments</h3>
+          <p v-if="equipments.length === 0">None</p>
           <ul>
-            <li v-for="equipment in character.equipments">
-              {{ equipment.quantity }} {{ equipment.name }}
+            <li v-for="equipment in equipments">
+              {{ equipment.quantity }} {{ equipment.item.name }}
             </li>
           </ul>
         </div>
       </div>
     </div>
+
+    <footer>
+      <div class=".u-max-full-width">
+        Made by <a href="https://angel.co/primaulia" target="_blank">Prima Aulia Gusta</a>, artwork by various
+        <a href="https://www.dndbeyond.com/" target="_blank">
+          <img src="./imgs/logo.png" alt="Dungeons &amp; Dragons" width="50">
+        </a>
+        fandoms.
+      </div>
+    </footer>
   </div>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
   <script src="./scripts/script.js" charset="utf-8"></script>
-  <!-- <script src="/scripts/components.js"></script>
-  <script src="/scripts/index.js"></script> -->
 </body>
 </html>
