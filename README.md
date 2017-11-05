@@ -5,8 +5,9 @@ Stranger Dungeon is a [Vue.js](https://vuejs.org/)-powered site that provides yo
 
 [![Demo](./imgs/demo.gif)](http://altabepha.com/strangerdungeon)
 
-## **Disclaimer**
+## Disclaimer
 - I have never played Dungeons & Dragons before, so I'm not really sure about which information is essential to be displayed, and about the rules of the game
+- As to this, I'm trying to follow closely to what Beyond DnD has done in their [class description page](https://www.dndbeyond.com/characters/classes/barbarian)
 
 ## Brief
 - On page refresh randomly show 1 of the many D&D classes
