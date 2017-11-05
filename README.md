@@ -1,1 +1,1 @@
-# strangerdungeon
+# [Stranger Dungeon]()

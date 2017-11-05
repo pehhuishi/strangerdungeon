@@ -1,20 +1,13 @@
-/**
- * index.scss
- * - Add any styles you want here!
- */
-
 * {
   box-sizing: border-box;
 }
 
-/* CUSTOM */
+/* TODO: Refactor this with scss */
 
 body {
   font-family: 'Open Sans', sans-serif;
   background-color:  #f9f9f9;
 }
-
-/* TODO: Refactor this with scss */
 
 body.Barbarian {
   background:
