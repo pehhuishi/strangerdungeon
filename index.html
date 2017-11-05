@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <!-- Meta -->
   <meta charset="UTF-8" />
   <title>Stranger Dungeon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Uncial+Antiqua" rel="stylesheet">
@@ -47,7 +47,38 @@
         <img :src="character.image" :alt="character.name" height="500">
       </div>
       <div class="character-status one-half column">
-        Attributes here
+        <div class="hp attribute">
+          <h3>Hit Points</h3>
+          <ul>
+            <li>Hit Dice: 1d{{ character.hit_die }} per {{ character.name }} level</li>
+            <li>Hit Points at 1st Level: {{ character.hit_die }} + your Constitution modifier
+            <li>Hit Points at Higher Levels: 1d{{ character.hit_die}} (or 7) + your Constitution modifier per {{ character.name }} level after 1st</li>
+          </ul>
+        </div>
+        <div class="proficiencies attribute">
+          <h3>Proficiencies</h3>
+          <ul>
+            <li v-for="proficiency in character.proficiences">
+              {{ proficiency.name }}
+            </li>
+          </ul>
+        </div>
+        <div class="saving-throws attribute">
+          <h3>Saves</h3>
+          <ul>
+            <li v-for="saving_throw in character.saving_throws">
+              {{ saving_throw.name }}
+            </li>
+          </ul>
+        </div>
+        <div class="equipments attribute">
+          <h3>Equipments</h3>
+          <ul>
+            <li v-for="equipment in character.equipments">
+              {{ equipment.quantity }} {{ equipment.name }}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

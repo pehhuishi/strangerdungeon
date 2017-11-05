@@ -10,8 +10,69 @@
 /* CUSTOM */
 
 body {
-  background: #fff;
   font-family: 'Open Sans', sans-serif;
+}
+
+/* TODO: Refactor this with scss */
+
+body.Barbarian {
+  background:
+  url(https://media-waterdeep.cursecdn.com/attachments/0/276/barbarian1k.jpg) no-repeat center top,url(https://media-waterdeep.cursecdn.com/attachments/0/84/background_texture.png) #f9f9f9;
+}
+
+body.Bard {
+  background:
+  url(https://media-waterdeep.cursecdn.com/attachments/0/279/bard1k.jpg) no-repeat center top,url(https://media-waterdeep.cursecdn.com/attachments/0/84/background_texture.png) #f9f9f9;
+}
+
+body.Cleric {
+  background:
+  url(https://media-waterdeep.cursecdn.com/attachments/0/285/cleric1k.jpg) no-repeat center top,url(https://media-waterdeep.cursecdn.com/attachments/0/84/background_texture.png) #f9f9f9;
+}
+
+body.Druid {
+  background:
+  url(https://media-waterdeep.cursecdn.com/attachments/0/291/druid1k.jpg) no-repeat center top,url(https://media-waterdeep.cursecdn.com/attachments/0/84/background_texture.png) #f9f9f9;
+}
+
+body.Fighter {
+  background:
+  url(https://media-waterdeep.cursecdn.com/attachments/0/297/fighter1k.jpg) no-repeat center top,url(https://media-waterdeep.cursecdn.com/attachments/0/84/background_texture.png) #f9f9f9;
+}
+
+body.Monk {
+  background:
+  url(https://media-waterdeep.cursecdn.com/attachments/0/322/monk1k.jpg) no-repeat center top,url(https://media-waterdeep.cursecdn.com/attachments/0/84/background_texture.png) #f9f9f9;
+}
+
+body.Paladin {
+  background:
+  url(https://media-waterdeep.cursecdn.com/attachments/0/325/paladin1k.jpg) no-repeat center top,url(https://media-waterdeep.cursecdn.com/attachments/0/84/background_texture.png) #f9f9f9;
+}
+
+body.Ranger {
+  background:
+  url(https://media-waterdeep.cursecdn.com/attachments/0/328/ranger1k.jpg) no-repeat center top,url(https://media-waterdeep.cursecdn.com/attachments/0/84/background_texture.png) #f9f9f9;
+}
+
+body.Sorcerer {
+  background:
+  url(https://media-waterdeep.cursecdn.com/attachments/0/334/sorcerer1k.jpg) no-repeat center top,url(https://media-waterdeep.cursecdn.com/attachments/0/84/background_texture.png) #f9f9f9;
+}
+
+body.Warlock {
+  background:
+  url(https://media-waterdeep.cursecdn.com/attachments/0/340/warlock1k.jpg) no-repeat center top,url(https://media-waterdeep.cursecdn.com/attachments/0/84/background_texture.png) #f9f9f9;
+}
+
+body.Wizard {
+  background:
+  url(https://media-waterdeep.cursecdn.com/attachments/0/343/wizard1k.jpg) no-repeat center top,url(https://media-waterdeep.cursecdn.com/attachments/0/84/background_texture.png) #f9f9f9;
+}
+
+body.Rogue {
+  background:
+  url(https://media-waterdeep.cursecdn.com/attachments/0/331/rogue1k.jpg) no-repeat center top,url(https://media-waterdeep.cursecdn.com/attachments/0/84/background_texture.png) #f9f9f9;
 }
 
 header {
@@ -23,8 +84,12 @@ header {
   margin-bottom: 50px;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Uncial Antiqua', cursive;
+}
+
+h3 {
+  font-size: 3rem;
 }
 
 .row {
@@ -43,6 +108,10 @@ h1, h2 {
 
 .wrapper h1, .wrapper .character-hero {
   text-align: center;
+}
+
+.wrapper h3 {
+  /*text-align: right;*/
 }
 
 /* CUSTOM */

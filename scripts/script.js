@@ -7,10 +7,10 @@ var app = new Vue({
   data: {
     title: 'Stranger Dungeon',
     character: {
-      name: 'Loading...',
+      name: 'Loading...'
     }
   },
-  mounted: function() {
+  mounted: function () {
     this.randomClass()
   },
   methods: {
@@ -22,12 +22,32 @@ var app = new Vue({
         axios.get(API_URL + randomClassId)
         .then(response => {
           data = response.data
+          // console.log(data, data.starting_equipment)
+
           this.character = data
 
           this.character.image = `${ASSETS_URL}/${data.name}.png`
+          this.character.proficiences = data.proficiencies
+          this.character.saving_throws = data.saving_throws
+
+          // change body class per character name
+          document.querySelector('body').classList.add(data.name)
+
+          // TODO: refactor this
+          // this.retrieveEquipments(data.starting_equipment)
         })
         .catch(err => {
           console.log(err)
+        })
+      }
+    ),
+    retrieveEquipments: _.debounce(
+      function (eqObj) {
+        axios.get(eqObj.url)
+        .then(response => {
+          data = response.data
+          this.character.equipments = data.starting_equipment
+          console.log(data)
         })
       }
     )
