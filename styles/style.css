@@ -7,12 +7,14 @@
   box-sizing: border-box;
 }
 
+/* CUSTOM */
+
 body {
   background: #fff;
+  font-family: 'Open Sans', sans-serif;
 }
 
 header {
-  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: normal;
@@ -21,7 +23,9 @@ header {
   margin-bottom: 50px;
 }
 
-/* CUSTOM */
+h1, h2 {
+  font-family: 'Uncial Antiqua', cursive;
+}
 
 .row {
   margin-bottom: 30px;

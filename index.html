@@ -4,10 +4,11 @@
 
   <!-- Meta -->
   <meta charset="UTF-8" />
-  <title>Vue.JS Grid</title>
+  <title>Stranger Dungeon</title>
 
   <!-- Styles -->
-  <link href="//fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Uncial+Antiqua" rel="stylesheet">
+
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
   <link rel="stylesheet" href="./styles/style.css">
 
@@ -37,12 +38,12 @@
 
   <div id="app" class="container">
     <header>
-      {{ title }}
+      <h1>{{ title }}</h1>
     </header>
 
     <div class="row wrapper">
       <div class="character-hero one-half column">
-        <h1>{{ character.name }}</h1>
+        <h2>{{ character.name }}</h2>
         <img :src="character.image" :alt="character.name" height="500">
       </div>
       <div class="character-status one-half column">
