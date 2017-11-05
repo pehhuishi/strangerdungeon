@@ -10,14 +10,14 @@ Stranger Dungeon is a [Vue.js](https://vuejs.org/)-powered site that provides yo
 - As to this, I'm trying to follow closely to what Beyond DnD has done in their [class description page](https://www.dndbeyond.com/characters/classes/barbarian)
 
 ## Brief
-- On page refresh randomly show 1 of the many D&D classes
+- On page refresh, randomly show 1 of the many D&D classes
 - Display all other attributes related to the current class on the page
 
 ## Assumption
 - The only API to be used is [http://www.dnd5eapi.co/](http://www.dnd5eapi.co/)
 - The site needs to be mobile-responsive
-- Provide a glance information of the class, full information will be redirected to a more comprehensive website
-- API only provides with text basis information
+- Provide a quick information of the DnD character class, full information will be redirected to a more comprehensive website
+- API only provides text-basis information
 
 ## Used in this site
 - [Vue.js](https://vuejs.org/) - as the primary web framework
@@ -29,4 +29,4 @@ Stranger Dungeon is a [Vue.js](https://vuejs.org/)-powered site that provides yo
 ### Changelogs
 - **5 Nov**
   - Basic site that displays random classes attributes randomly
-  - Mobile first site
+  - Mobile-first site
