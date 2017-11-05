@@ -1,5 +1,6 @@
 // Init Vue!
-const BASE_URL = 'http://www.dnd5eapi.co/api/classes/'
+const API_URL = 'http://www.dnd5eapi.co/api/classes/'
+const ASSETS_URL = './imgs/classes'
 
 var app = new Vue({
   el: '#app',
@@ -7,7 +8,6 @@ var app = new Vue({
     title: 'Stranger Dungeon',
     character: {
       name: 'Loading...',
-      hit_die: '0'
     }
   },
   mounted: function() {
@@ -16,12 +16,15 @@ var app = new Vue({
   methods: {
     randomClass: _.debounce(
       function () {
-        const randomClassId = Math.floor(Math.random() * 13) + 1
+        // randomize up to 12 because there're only 12 classes in the API
+        const randomClassId = Math.floor(Math.random() * 12) + 1
 
-        axios.get(BASE_URL + randomClassId)
+        axios.get(API_URL + randomClassId)
         .then(response => {
-          console.log(response.data);
-          this.character = response.data
+          data = response.data
+          this.character = data
+
+          this.character.image = `${ASSETS_URL}/${data.name}.png`
         })
         .catch(err => {
           console.log(err)

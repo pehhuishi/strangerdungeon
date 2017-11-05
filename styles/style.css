@@ -21,6 +21,8 @@ header {
   margin-bottom: 50px;
 }
 
+/* CUSTOM */
+
 .row {
   margin-bottom: 30px;
 }
@@ -29,6 +31,17 @@ header {
   margin-bottom: 10px;
 }
 
+.wrapper {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.wrapper h1, .wrapper .character-hero {
+  text-align: center;
+}
+
+/* CUSTOM */
 
 .grid {
   columns: 3 auto;
