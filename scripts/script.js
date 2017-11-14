@@ -9,7 +9,7 @@ const Home = {
     <div class="row wrapper">
       <ul>
         <li v-for="cls in classes">
-          <a href="#" @click="goToClass(cls.url)">{{ cls.name }}</a>
+          <a @click="goToClass(cls.url)">{{ cls.name }}</a>
         </li>
       </ul>
     </div>
@@ -23,17 +23,92 @@ const Home = {
 }
 
 const Detail = {
+  data: function () {
+    return {
+      character: {},
+      equipments: []
+    }
+  },
   template: `
     <div class="row wrapper">
-      <a href="#" @click="goBack">Back</a>
-      Class #{{ $route.params.id }}
+      <div class="character-hero one-half column">
+        <a :href="character.readMoreUrl" target="_blank">
+          <h2>{{ character.name }}</h2>
+        </a>
+        <img :src="character.image" :alt="character.name" width="100%">
+        <a class="button button-primary" href="#" @click="goBack">Back</a>
+      </div>
+      <div class="character-status one-half column">
+        <div class="hp attribute">
+          <h3>Hit Points</h3>
+          <ul>
+            <li>Hit Dice: 1d{{ character.hit_die }} per {{ character.name }} level</li>
+            <li>HP at 1st Level: {{ character.hit_die }} + your Constitution modifier
+            <li>HP at Higher Levels: 1d{{ character.hit_die}} + your Constitution modifier per {{ character.name }} level after 1st</li>
+          </ul>
+        </div>
+        <div class="proficiencies attribute">
+          <h3>Proficiencies</h3>
+          <ul>
+            <li v-for="proficiency in character.proficiences">
+              {{ proficiency.name }}
+            </li>
+          </ul>
+        </div>
+        <div class="saving-throws attribute">
+          <h3>Saves</h3>
+          <ul>
+            <li v-for="saving_throw in character.saving_throws">
+              {{ saving_throw.name }}
+            </li>
+          </ul>
+        </div>
+        <a class="button button-primary" :href="character.readMoreUrl" target="_blank">Read more</a>
+      </div>
     </div>
   `,
+  created () {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    this.retrieveClass(this.$route.params.id)
+  },
+  watch: {
+    character: function (data) {
+      this.retrieveEquipments(data)
+    }
+  },
   methods: {
     goBack: function () {
       window.history.length > 1
-        ? this.$router.go(-2) // hmmmmm
+        ? this.$router.go(-1)
         : this.$router.push('/')
+    },
+    retrieveClass: function (classId) {
+      axios.get(API_URL + classId)
+      .then(response => {
+        data = response.data
+
+        this.character = data
+        this.character.image = `${ASSETS_URL}/${data.name}.png`
+        this.character.proficiences = data.proficiencies
+        this.character.readMoreUrl = `${BEYOND_URL}${data.name.toLowerCase()}`
+
+        // change body class per character name
+        document.querySelector('body').className = ''
+        document.querySelector('body').classList.add(data.name)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    },
+    retrieveEquipments: function (data) {
+      console.log('retrieve equipments')
+      // axios.get(data.starting_equipment.url)
+      //      .then(response => {
+      //     data = response.data
+      //     this.equipments = data.starting_equipment
+      //   })
+      // }
     }
   }
 }
