@@ -98,7 +98,7 @@ const Detail = {
   },
   methods: {
     goBack: function () {
-      window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
+      this.$router.push('/')
     },
     retrieveClass: function (classId) {
       axios.get(API_URL + classId)
