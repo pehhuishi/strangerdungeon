@@ -142,7 +142,7 @@ h3 {
 
 .character-column {
   background: #7f231d;
-  background-position: 0 12%;
+  background-position: 0 11%;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
@@ -155,10 +155,6 @@ h3 {
 .character-column:hover {
   background-color: #b33129;
 }
-
-/*.character-column:first-child {
-  margin-left: 4%;
-}*/
 
 .character-column.Barbarian {
   background-image: url('../imgs/classes/Barbarian.png')
@@ -220,16 +216,16 @@ h3 {
 
 .side-navi .fa {
   position: absolute;
-  top: 0;
+  top: -8px;
   cursor: pointer;
 }
 
 .side-navi .fa-angle-left {
-  left: 0;
+  left: -35px;
 }
 
 .side-navi .fa-angle-right {
-  right: 0;
+  right: -35px;
 }
 
 footer {
