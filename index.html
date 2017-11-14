@@ -11,21 +11,26 @@
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
   <!-- Styles -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Uncial+Antiqua" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans|Uncial+Antiqua" rel="stylesheet">
 
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
   <link rel="stylesheet" href="./styles/style.css">
 
   <!-- Init Vue.js -->
-  <script src="https://unpkg.com/vue"></script>
+  <script src="//unpkg.com/vue"></script>
+  <script src="//unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 <body>
   <div id="app" class="container">
     <header>
-      <h1>{{ title }}</h1>
+      <router-link to="/">
+        <h1>{{ title }}</h1>
+      </router-link>
     </header>
 
-    <div class="row wrapper">
+    <router-view :classes="classes"></router-view>
+
+    <!--div class="row wrapper">
       <div class="character-hero one-half column">
         <a :href="readMoreUrl" target="_blank">
           <h2>{{ character.name }}</h2>
@@ -68,12 +73,12 @@
         </div>
         <a class="button button-primary" :href="readMoreUrl" target="_blank">Read more</a>
       </div>
-    </div>
+    </div-->
 
     <footer>
       <div class=".u-max-full-width">
-        Made by <a href="https://angel.co/primaulia" target="_blank">Prima Aulia Gusta</a>, artwork by various
-        <a href="https://www.dndbeyond.com/" target="_blank">
+        Made by <a href="//angel.co/primaulia" target="_blank">Prima Aulia Gusta</a>, artwork by various
+        <a href="//www.dndbeyond.com/" target="_blank">
           <img src="./imgs/logo.png" alt="Dungeons &amp; Dragons" width="50">
         </a>
         fandoms.
@@ -82,8 +87,8 @@
   </div>
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
-  <script src="./scripts/script.js" charset="utf-8"></script>
+  <script src="//cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script> -->
+  <script src="./scripts/script.js"></script>
 </body>
 </html>
