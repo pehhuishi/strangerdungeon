@@ -12,8 +12,8 @@ Stranger Dungeon is a [Vue.js](https://vuejs.org/)-powered site that provides yo
 ## Brief
 - On page refresh, randomly show 1 of the many D&D classes
 - Display all other attributes related to the current class on the page
-- On first page, show all classes at once and let users click on any class to their attributes ** *(bonus)* **
-- Let users return back to the list page to see other class details ** *(bonus)* **
+- On first page, show all classes at once and let users click on any class to their attributes ***(bonus)***
+- Let users return back to the list page to see other class details ***(bonus)***
 
 ## Assumption
 - The only API to be used is [http://www.dnd5eapi.co/](http://www.dnd5eapi.co/)
@@ -33,7 +33,7 @@ Stranger Dungeon is a [Vue.js](https://vuejs.org/)-powered site that provides yo
 - **5 Nov**
   - Basic site that displays random classes attributes randomly
   - Mobile-first site
-- ** 14 Nov**
+- **14 Nov**
   - Class list page
   - Breaking down sites into 2 main components `Home` and `Details`
   - Implementation of `vue-router 2`
