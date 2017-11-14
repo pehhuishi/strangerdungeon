@@ -63,13 +63,20 @@ const Detail = {
             </li>
           </ul>
         </div>
+        <div class="equipments attribute">
+          <h3>Starting Equipment</h3>
+          <p v-if="equipments.length === 0">None</p>
+          <ul>
+            <li v-for="equipment in equipments">
+              {{ equipment.quantity }} {{ equipment.item.name }}
+            </li>
+          </ul>
+        </div>
         <a class="button button-primary" :href="character.readMoreUrl" target="_blank">Read more</a>
       </div>
     </div>
   `,
   created () {
-    // fetch the data when the view is created and the data is
-    // already being observed
     this.retrieveClass(this.$route.params.id)
   },
   watch: {
@@ -79,9 +86,7 @@ const Detail = {
   },
   methods: {
     goBack: function () {
-      window.history.length > 1
-        ? this.$router.go(-1)
-        : this.$router.push('/')
+      window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
     },
     retrieveClass: function (classId) {
       axios.get(API_URL + classId)
@@ -102,13 +107,14 @@ const Detail = {
       })
     },
     retrieveEquipments: function (data) {
-      console.log('retrieve equipments')
-      // axios.get(data.starting_equipment.url)
-      //      .then(response => {
-      //     data = response.data
-      //     this.equipments = data.starting_equipment
-      //   })
-      // }
+      axios.get(data.starting_equipment.url)
+           .then(response => {
+             data = response.data
+             this.equipments = data.starting_equipment
+           })
+           .catch(err => {
+             console.log(err)
+           })
     }
   }
 }
@@ -124,12 +130,10 @@ const routes = [
   }
 ]
 
-const router = new VueRouter({
-  routes
-})
-
 const app = new Vue({
-  router,
+  router: new VueRouter({
+    routes
+  }),
   data: {
     title: 'Stranger Dungeon',
     classes: []

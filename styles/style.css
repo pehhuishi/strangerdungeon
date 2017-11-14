@@ -115,14 +115,11 @@ h3 {
   width: 90%;
   max-width: 900px;
   margin: 0 auto;
+  position: relative
 }
 
 .wrapper h1, .wrapper .character-hero {
   text-align: center;
-}
-
-.wrapper h3 {
-  /*text-align: right;*/
 }
 
 .attribute {
