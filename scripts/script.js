@@ -7,11 +7,11 @@ const Home = {
   props: ['classes'],
   template: `
     <div class="row wrapper">
-      <ul>
-        <li v-for="cls in classes">
-          <a @click="goToClass(cls.url)">{{ cls.name }}</a>
-        </li>
-      </ul>
+      <div v-for="cls in classes"
+           :class="['one-half', 'column', 'character-column', cls.name]"
+           @click="goToClass(cls.url)">
+        <span>{{ cls.name }}</span>
+      </div>
     </div>
   `,
   methods: {

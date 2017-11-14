@@ -95,7 +95,7 @@ header {
   margin-bottom: 50px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, .character-column {
   font-family: 'Uncial Antiqua', cursive;
 }
 
@@ -137,6 +137,84 @@ h3 {
 .button.button-primary:hover, .button.button-primary:focus {
   background-color: #b33129;
   border-color: white;
+}
+
+.character-column {
+  background: #7f231d;
+  background-position: 0 12%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: right;
+  color: white;
+  cursor: pointer;
+}
+
+.character-column:hover {
+  background-color: #b33129;
+}
+
+/*.character-column:first-child {
+  margin-left: 4%;
+}*/
+
+.character-column.Barbarian {
+  background-image: url('../imgs/classes/Barbarian.png')
+}
+
+.character-column.Bard {
+  background-image: url('../imgs/classes/Bard.png')
+}
+
+.character-column.Cleric {
+  background-image: url('../imgs/classes/Cleric.png')
+}
+
+.character-column.Druid {
+  background-image: url('../imgs/classes/Druid.png')
+}
+
+.character-column.Fighter {
+  background-image: url('../imgs/classes/Fighter.png')
+}
+
+.character-column.Monk {
+  background-image: url('../imgs/classes/Monk.png')
+}
+
+.character-column.Paladin {
+  background-image: url('../imgs/classes/Paladin.png')
+}
+
+.character-column.Ranger {
+  background-image: url('../imgs/classes/Ranger.png')
+}
+
+.character-column.Sorcerer {
+  background-image: url('../imgs/classes/Sorcerer.png')
+}
+
+.character-column.Warlock {
+  background-image: url('../imgs/classes/Warlock.png')
+}
+
+.character-column.Wizard {
+  background-image: url('../imgs/classes/Wizard.png')
+}
+
+.character-column.Rogue {
+  background-image: url('../imgs/classes/Rogue.png')
+}
+
+.character-column span {
+  text-shadow: 1px 1px 2px black;
+}
+
+.character-column.one-half.column {
+    width: 48%;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 footer {
