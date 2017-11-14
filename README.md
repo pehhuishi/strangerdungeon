@@ -3,7 +3,7 @@
 
 Stranger Dungeon is a [Vue.js](https://vuejs.org/)-powered site that provides you with simple information on Dungeons & Dragons Classes.
 
-[![Demo](./imgs/demo.gif)](http://altabepha.com/strangerdungeon)
+[![Demo](./imgs/demo2.gif)](http://altabepha.com/strangerdungeon)
 
 ## Disclaimer
 - I have never played Dungeons & Dragons before, so I'm not really sure about which information is essential to be displayed, and about the rules of the game
@@ -39,4 +39,4 @@ Stranger Dungeon is a [Vue.js](https://vuejs.org/)-powered site that provides yo
   - Implementation of `vue-router 2`
   - CSS updates
   - Additional features to scroll through classes using the right and left arrows
-  - Removal of `lodash` as it is redundant 
+  - Removal of `lodash` as it is redundant
