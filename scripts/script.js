@@ -74,6 +74,14 @@ const Detail = {
         </div>
         <a class="button button-primary" :href="character.readMoreUrl" target="_blank">Read more</a>
       </div>
+      <div class="side-navi u-full-width">
+        <a @click="prevClass">
+          <i class="fa fa-4x fa-angle-left"></i>
+        </a>
+        <a @click="nextClass">
+          <i class="fa fa-4x fa-angle-right"></i>
+        </a>
+      </div>
     </div>
   `,
   created () {
@@ -83,6 +91,10 @@ const Detail = {
     character: function (data) {
       this.retrieveEquipments(data)
     }
+  },
+  beforeRouteUpdate (to, from, next) {
+    this.retrieveClass(to.params.id)
+    next()
   },
   methods: {
     goBack: function () {
@@ -115,6 +127,14 @@ const Detail = {
            .catch(err => {
              console.log(err)
            })
+    },
+    prevClass: function () {
+      let prevParam = this.$route.params.id === '1' ? 12 : parseInt(this.$route.params.id) - 1
+      this.$router.push({ path: `/class/${prevParam}` })
+    },
+    nextClass: function () {
+      let nextParam = this.$route.params.id === '12' ? 1 : parseInt(this.$route.params.id) + 1
+      this.$router.push({ path: `/class/${nextParam}` })
     }
   }
 }

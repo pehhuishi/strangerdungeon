@@ -12,68 +12,27 @@
 
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Uncial+Antiqua" rel="stylesheet">
+  <!-- Fontawesome -->
+  <script src="https://use.fontawesome.com/77526f69b7.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
   <link rel="stylesheet" href="./styles/style.css">
 
-  <!-- Init Vue.js -->
+  <!-- Init Vue.js & Vue router -->
   <script src="https://unpkg.com/vue"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
+<!-- Initialize background with Barbarian class -->
 <body class="Barbarian">
   <div id="app" class="container">
     <header>
+      <!-- Only provides `visible` link to `/` -->
       <router-link to="/">
         <h1>{{ title }}</h1>
       </router-link>
     </header>
 
     <router-view :classes="classes"></router-view>
-
-    <!--div class="row wrapper">
-      <div class="character-hero one-half column">
-        <a :href="readMoreUrl" target="_blank">
-          <h2>{{ character.name }}</h2>
-        </a>
-        <img :src="character.image" :alt="character.name" width="100%">
-      </div>
-      <div class="character-status one-half column">
-        <div class="hp attribute">
-          <h3>Hit Points</h3>
-          <ul>
-            <li>Hit Dice: 1d{{ character.hit_die }} per {{ character.name }} level</li>
-            <li>HP at 1st Level: {{ character.hit_die }} + your Constitution modifier
-            <li>HP at Higher Levels: 1d{{ character.hit_die}} + your Constitution modifier per {{ character.name }} level after 1st</li>
-          </ul>
-        </div>
-        <div class="proficiencies attribute">
-          <h3>Proficiencies</h3>
-          <ul>
-            <li v-for="proficiency in character.proficiences">
-              {{ proficiency.name }}
-            </li>
-          </ul>
-        </div>
-        <div class="saving-throws attribute">
-          <h3>Saves</h3>
-          <ul>
-            <li v-for="saving_throw in character.saving_throws">
-              {{ saving_throw.name }}
-            </li>
-          </ul>
-        </div>
-        <div class="equipments attribute">
-          <h3>Starting Equipment</h3>
-          <p v-if="equipments.length === 0">None</p>
-          <ul>
-            <li v-for="equipment in equipments">
-              {{ equipment.quantity }} {{ equipment.item.name }}
-            </li>
-          </ul>
-        </div>
-        <a class="button button-primary" :href="readMoreUrl" target="_blank">Read more</a>
-      </div>
-    </div-->
 
     <footer>
       <div class=".u-max-full-width">
