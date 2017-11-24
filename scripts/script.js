@@ -1,5 +1,5 @@
 // Init Vue!
-const API_URL = 'https://www.dnd5eapi.co/api/classes/'
+const API_URL = 'http://www.dnd5eapi.co/api/classes/'
 const ASSETS_URL = './imgs/classes'
 const BEYOND_URL = 'https://www.dndbeyond.com/characters/classes/'
 
